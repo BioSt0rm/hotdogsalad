@@ -1,0 +1,24 @@
+<html>
+<head>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+  google.load("jquery", "1");
+
+  submit = function() {
+    $.ajax({
+      url: "http://localhost:8888/tryjoin",
+      type: "POST",
+      data: "{\"testing\": \"oh yeah\"}",
+      success: function(response) {
+        alert(response);
+      },
+      error: function(xhr, textStatus) {
+        alert("bad" + textStatus);
+      }
+    });
+  }
+  </script>
+</head>
+<body>
+<input type="button" value="go" onclick="submit();" />
+</body>
